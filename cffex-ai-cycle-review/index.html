@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>中金所 AI 悬浮球需求－评审入口</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    html, body {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    #root {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      height: 100%;
+      min-height: 100vh;
+      overflow: visible;
+    }
+    body.is-element-page #root {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  <style>
+.cffex-review{box-sizing:border-box;display:flex;flex-direction:column;width:100%;height:100vh;height:100dvh;min-height:360px;overflow:hidden;color:var(--review-text);background:var(--review-background);font-size:14px;line-height:1.5}.cffex-review *,.cffex-review *:before,.cffex-review *:after{box-sizing:border-box}.cffex-review__header{display:flex;align-items:center;flex-shrink:0;min-height:48px;gap:12px;padding:8px 20px;border-bottom:1px solid var(--review-border);background:var(--review-surface)}.cffex-review__brand-icon{display:grid;place-items:center;width:32px;height:32px;flex-shrink:0;border-radius:var(--review-radius);color:var(--review-primary);background:var(--review-primary-bg);font-size:18px}.cffex-review__header h1{margin:0;font-size:18px;font-weight:600;letter-spacing:.2px}.cffex-review__header-divider{height:16px;border-left:1px solid var(--review-border)}.cffex-review__header-label{color:var(--review-secondary);font-size:13px;white-space:nowrap}.cffex-review__body{display:flex;flex:1;min-height:0}.cffex-review__sidebar{flex:0 0 240px;width:240px;overflow-y:auto;border-right:1px solid var(--review-border);background:var(--review-surface)}.cffex-review__nav{display:flex;flex-direction:column;min-height:100%;padding:24px 12px 16px}.cffex-review__nav-heading{display:flex;justify-content:space-between;gap:8px;padding:0 12px 16px;color:var(--review-secondary);font-size:12px}.cffex-review__nav-heading span:first-child{font-weight:600}.cffex-review__nav-items{display:flex;flex-direction:column;gap:8px}.cffex-review__nav-item{display:flex;gap:10px;align-items:flex-start;width:100%;padding:14px 10px;border:1px solid transparent;border-radius:var(--review-radius);background:transparent;color:var(--review-text);font:inherit;text-align:left;cursor:pointer}.cffex-review__nav-item:hover{background:var(--review-fill)}.cffex-review__nav-item[aria-current=page]{color:var(--review-primary);border-color:var(--review-primary-border);background:var(--review-primary-bg)}.cffex-review__nav-item:focus-visible{outline:2px solid var(--review-primary);outline-offset:2px}.cffex-review__nav-index{padding-top:1px;color:var(--review-tertiary);font-size:12px;font-variant-numeric:tabular-nums}.cffex-review__nav-item[aria-current=page] .cffex-review__nav-index{color:var(--review-primary)}.cffex-review__nav-details{display:flex;min-width:0;flex-direction:column;gap:9px}.cffex-review__nav-title{font-size:13px;font-weight:500;line-height:1.6}.cffex-review__publication{display:inline-flex;align-items:center;gap:6px;color:var(--review-secondary);font-size:12px}.cffex-review__status-dot{width:5px;height:5px;border-radius:50%;background:var(--review-tertiary)}.cffex-review__publication--published .cffex-review__status-dot{background:var(--review-success)}.cffex-review__nav-note{margin:auto 12px 0;padding-top:32px;color:var(--review-tertiary);font-size:12px;line-height:1.8}.cffex-review__main{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0}.cffex-review__toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;flex-shrink:0;gap:8px 16px;padding:10px 16px 10px 12px;border-bottom:1px solid var(--review-border);background:var(--review-surface)}.cffex-review__context{display:flex;gap:12px;align-items:flex-start;min-width:0}.cffex-review__directory-toggle{flex-shrink:0}.cffex-review__page-info{min-width:0}.cffex-review__title-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.cffex-review__title-row h2{margin:0;font-size:16px;font-weight:600;line-height:1.8}.cffex-review__page-info p{margin:4px 0 0;color:var(--review-secondary);font-size:12px;overflow-wrap:anywhere}.cffex-review__page-info p>span{margin-right:10px;color:var(--review-tertiary)}.cffex-review__content{display:flex;flex:1;min-height:0;padding:10px}.cffex-review__frame-session{position:relative;display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;overflow:hidden;border:1px solid var(--review-border);border-radius:var(--review-radius);background:var(--review-surface)}.cffex-review__frame-stage{position:relative;flex:1;min-width:0;min-height:0;overflow:hidden;aspect-ratio:16 / 10;background:var(--review-surface)}.cffex-review__iframe{display:block;width:1440px;height:900px;border:0;background:var(--review-surface);transform:scale(var(--frame-scale, 1));transform-origin:top left}.cffex-review__loading{position:absolute;top:16px;left:50%;z-index:1;display:flex;align-items:center;gap:10px;max-width:calc(100% - 32px);padding:10px 16px;transform:translate(-50%);border:1px solid var(--review-border);border-radius:var(--review-radius);background:var(--review-surface);color:var(--review-secondary);font-size:13px;white-space:nowrap;pointer-events:none}.cffex-review__frame-notice{flex-shrink:0;padding:12px}.cffex-review__frame-footnote{flex-shrink:0;padding:7px 12px;border-top:1px solid var(--review-border);color:var(--review-tertiary);font-size:11px}.cffex-review__empty{display:flex;flex:1;min-width:0;flex-direction:column;align-items:center;justify-content:center;overflow-y:auto;padding:32px 20px;border:1px solid var(--review-border);border-radius:var(--review-radius);background:var(--review-surface);text-align:center}.cffex-review__empty h3{margin:0 0 12px;color:var(--review-text);font-size:18px;font-weight:500}.cffex-review__empty p{margin:8px 0;color:var(--review-secondary);font-size:13px}.cffex-review__empty .cffex-review__empty-scope{margin-top:16px}.cffex-review__empty-hint{margin-top:12px;color:var(--review-tertiary);font-size:12px}.cffex-review--drawer{height:100%;min-height:0;background:var(--review-surface)}.cffex-review--drawer .cffex-review__nav{overflow-y:auto}.cffex-review__sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media (max-width: 899px){.cffex-review__frame-stage{aspect-ratio:auto}.cffex-review__iframe{width:100%;height:100%;transform:none}.cffex-review__header{min-height:58px;padding:12px 16px;gap:10px}.cffex-review__toolbar{padding:14px 16px;gap:12px}.cffex-review__actions{width:100%}.cffex-review__content{padding:10px}}@media (max-width: 480px){.cffex-review__header{flex-wrap:wrap;gap:8px}.cffex-review__header h1{font-size:16px}.cffex-review__header-label{font-size:12px}.cffex-review__header-divider{display:none}.cffex-review__brand-icon{width:26px;height:26px;font-size:15px}.cffex-review__toolbar{padding:12px}.cffex-review__context{gap:8px}.cffex-review__title-row h2{font-size:15px}.cffex-review__content{padding:8px}.cffex-review__frame-footnote{font-size:10px;padding:6px 8px}}
+
+  </style>
+</head>
+<body>
+
+  <script>
+    (function () {
+      var isComponent = false;
+      if (document.body && (isComponent || window.location.pathname.includes('/components/'))) {
+        document.body.classList.add('is-element-page');
+      }
+    })();
+  </script>
+
+  <div id="root"></div>
+
+  
+  <script src="./assets/react.production.min.js"></script>
+  <script src="./assets/react-dom.production.min.js"></script>
+  <script src="./assets/export-html-bootstrap.js"></script>
+
+  <script>
+    function waitForBootstrap(timeoutMs) {
+      timeoutMs = timeoutMs || 10000;
+      return new Promise(function (resolve, reject) {
+        var startedAt = Date.now();
+        function check() {
+          if (window.HtmlTemplateBootstrap) {
+            resolve(window.HtmlTemplateBootstrap);
+            return;
+          }
+          if (Date.now() - startedAt >= timeoutMs) {
+            reject(new Error('[Html Template] Bootstrap 初始化超时'));
+            return;
+          }
+          setTimeout(check, 10);
+        }
+        check();
+      });
+    }
+
+    function loadEntryScript(src) {
+      return new Promise(function (resolve, reject) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        script.onload = function () { resolve(); };
+        script.onerror = function () { reject(new Error('[Html Template] 入口脚本加载失败: ' + src)); };
+        document.body.appendChild(script);
+      });
+    }
+
+    async function bootstrapAndRender() {
+      try {
+        var bootstrap = await waitForBootstrap();
+        var renderComponent = bootstrap.renderComponent;
+        window.React = bootstrap.React;
+        window.ReactDOM = bootstrap.ReactDOM;
+
+        await loadEntryScript('./index.js');
+        
+
+        var Component = window.UserComponent && (window.UserComponent.Component || window.UserComponent.default || window.UserComponent);
+        if (!Component) {
+          throw new Error('[Html Template] 入口脚本未暴露 UserComponent');
+        }
+
+        renderComponent(Component);
+      } catch (error) {
+        console.error('[Html Template] 页面初始化失败:', error);
+      }
+    }
+
+    bootstrapAndRender();
+  </script>
+
+</body>
+</html>
